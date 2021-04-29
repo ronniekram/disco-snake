@@ -75,7 +75,7 @@ function update() {
   };
 
   if (snake.dead()) {
-    alert("Aw, you suck!");
+    showLoss();
     clearInterval(interval);
     window.location.reload();
   };
@@ -121,8 +121,24 @@ function showPaused() {
   ctx.fillText("PAUSED", width / 2, height / 2);
 }
 
+function showLoss() {
+  ctx.textAlign = "center";
+  ctx.font = "25px 'Press Start 2P'";
+  ctx.fillStyle = "black";
+  ctx.fillText("GET OUT OF FUNKY TOWN!", width / 2, height / 2);
+}
+
 const randColor = () => {
-  let colors = ["#E03D1A", "#E06E1A", "#E0CE1A", "#44E01A", "#1A85E0","#1A62E0", "#6C1AE0"];
+  // let colors1 = "rgba(255, 0, 0, 1)/rgba(255, 165, 0, 1)/rgba(255, 255, 0, 1)/rgba(0, 128, 0, 1)/rgba(0, 0, 255, 1)/rgba(75, 0, 130, 1)/rgba(238, 130, 238, 1)"
+  // let colors = "rgba(255, 0, 0, 0.9)/rgba(255, 165, 0, 0.9)/rgba(255, 255, 0, 0.9)/rgba(0, 128, 0, 0.9)/rgba(0, 0, 255, 0.9)/rgba(75, 0, 130, 0.9)/rgba(238, 130, 238, 0.9)"
+  // let colors3 = "rgba(255, 0, 0, 0.8)/rgba(255, 165, 0, 0.8)/rgba(255, 255, 0, 0.8)/rgba(0, 128, 0, 0.8)/rgba(0, 0, 255, 0.8)/rgba(75, 0, 130, 0.8)/rgba(238, 130, 238, 0.8)/"
+  let colors = "rgba(255, 0, 0, 0.7)/rgba(255, 165, 0, 0.7)/rgba(255, 255, 0, 0.7)/rgba(0, 128, 0, 0.7)/rgba(0, 0, 255, 0.7)/rgba(75, 0, 130, 0.7)/rgba(238, 130, 238, 0.7)"
+
+  // let colors = colors1.concat(colors2, colors3, colors4);
+  // console.log(colors.split("/"))
+  colors = colors.split('/')
+  // console.log(colors)
+  // let colors = ["rgb(255, 0, 0)", "#E06E1A", "#E0CE1A", "#44E01A", "#1A85E0","#1A62E0", "#6C1AE0"];
   let index = Math.floor(Math.random()*colors.length)
   return colors[index];
 }
