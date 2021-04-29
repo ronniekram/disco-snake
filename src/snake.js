@@ -64,6 +64,7 @@ class Snake {
         return true;
       };
     };
+    showLoss();
     return false;
   };
 
