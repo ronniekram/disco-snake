@@ -61,7 +61,6 @@ class Snake {
     for (let i = 0; i < this.tail.length; i++) {
       let tail = this.tail[i];
       if (Math.abs(this.x - tail.x) < tileSize && Math.abs(this.y - tail.y) < tileSize) {
-        showLoss();
         return true;
       };
     };

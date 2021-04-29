@@ -80,8 +80,8 @@ function update() {
   };
 
   if (snake.dead()) {
-    // showLoss();
     clearInterval(interval);
+    setTimeout(showLoss, 5000);
     // window.location.reload();
   };
 
