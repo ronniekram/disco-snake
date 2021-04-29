@@ -1,5 +1,8 @@
 body {
-  background-image: "./disco-bg.png";
+  background-image: url("./disco-bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
   color: white;
   font-family: 'Press Start 2P', cursive;
 }
@@ -19,7 +22,7 @@ body {
 
 canvas {
   display: inline;
-  background-color: #cdf1cb;
+  background-color: rgba(255,255,255,0.5);
   border: 1px solid black;
   border-radius: 5px;
 }
