@@ -40,7 +40,7 @@ window.addEventListener("keydown", (e) => {
     if (snake.velX != 1 && snake.x >= 0 && snake.x <= width && snake.y >= 0 && snake.y <= height) {
       snake.dir(1, 0);
     };
-  } else if(e.key === "y" && isLose) {
+  } else if(e.key === "y") {
     window.location.reload();
   }
 });
@@ -80,8 +80,8 @@ function update() {
   };
 
   if (snake.dead()) {
+    // showLoss();
     clearInterval(interval);
-    showLoss();
     // window.location.reload();
   };
 
@@ -128,7 +128,7 @@ function showPaused() {
 
 function showLoss() {
   ctx.textAlign = "center";
-  ctx.font = "25px 'Press Start 2P'";
+  ctx.font = "20px 'Press Start 2P'";
   ctx.fillStyle = "black";
   ctx.fillText("GET OUT OF FUNKY TOWN! 'Y' TO PLAY AGAIN!", width / 2, height / 2);
 }
