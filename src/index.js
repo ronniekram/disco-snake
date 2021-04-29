@@ -9,6 +9,7 @@ let food;
 let score;
 let isPaused;
 let interval;
+let isLose;
 
 window.addEventListener("load", () => {
   game();
@@ -39,7 +40,9 @@ window.addEventListener("keydown", (e) => {
     if (snake.velX != 1 && snake.x >= 0 && snake.x <= width && snake.y >= 0 && snake.y <= height) {
       snake.dir(1, 0);
     };
-  };
+  } else if(e.key === "y" && isLose) {
+    window.location.reload();
+  }
 });
 
 
@@ -64,19 +67,21 @@ function init() {
 
   score = 0;
   isPaused = false;
+  isLose = false;
 
   food = new Food(spawnLocation(), randColor())
   snake = new Snake({x: tileSize * Math.floor(width / (2 * tileSize)), y: tileSize * Math.floor(height / (2 * tileSize))}, "#127327")
 };
 
 function update() {
+  // display lose message and 'y' to play again - event listener for y key press to refresh
   if (isPaused) {
     return; 
   };
 
   if (snake.dead()) {
     clearInterval(interval);
-    // showLoss();
+    showLoss();
     // window.location.reload();
   };
 
@@ -125,7 +130,7 @@ function showLoss() {
   ctx.textAlign = "center";
   ctx.font = "25px 'Press Start 2P'";
   ctx.fillStyle = "black";
-  ctx.fillText("GET OUT OF FUNKY TOWN!", width / 2, height / 2);
+  ctx.fillText("GET OUT OF FUNKY TOWN! 'Y' TO PLAY AGAIN!", width / 2, height / 2);
 }
 
 const randColor = () => {

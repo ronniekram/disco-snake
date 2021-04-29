@@ -64,7 +64,7 @@ class Snake {
         return true;
       };
     };
-    showLoss();
+    isLose = true;
     return false;
   };
 
