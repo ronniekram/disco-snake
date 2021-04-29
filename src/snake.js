@@ -22,7 +22,6 @@ class Snake {
       let tail = this.tail[i];
       ctx.beginPath();
       ctx.rect(tail.x, tail.y, tileSize, tileSize)
-      // ctx.fillStyle = this.color;
       ctx.fillStyle = randColor();
       ctx.fill();
       ctx.strokeStyle = "black";

@@ -2,7 +2,7 @@ body {
   background-image: url("./disco-bg.png");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   color: white;
   font-family: 'Press Start 2P', cursive;
 }
@@ -10,8 +10,8 @@ body {
 #snake-box {
   text-align: center;
   margin: auto;
-  width: 75;
-  height: auto;
+  /* width: 75%; */
+  /* height: auto; */
 }
 
 .game-title {
