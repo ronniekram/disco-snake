@@ -1,0 +1,25 @@
+body {
+  background-image: "./disco-bg.png";
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+}
+
+#snake-box {
+  text-align: center;
+  margin: auto;
+  width: 75;
+  height: auto;
+}
+
+.game-title {
+  display: inline;
+  font-size: 40px;
+  letter-spacing: 10px;
+}
+
+canvas {
+  display: inline;
+  background-color: #cdf1cb;
+  border: 1px solid black;
+  border-radius: 5px;
+}
