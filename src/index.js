@@ -81,8 +81,7 @@ function update() {
 
   if (snake.dead()) {
     clearInterval(interval);
-    setTimeout(showLoss, 5000);
-    // window.location.reload();
+    setTimeout(showLoss, 200);
   };
 
   snake.border();
@@ -130,7 +129,8 @@ function showLoss() {
   ctx.textAlign = "center";
   ctx.font = "20px 'Press Start 2P'";
   ctx.fillStyle = "black";
-  ctx.fillText("GET OUT OF FUNKY TOWN! 'Y' TO PLAY AGAIN!", width / 2, height / 2);
+  ctx.fillText("GET OUT OF FUNKY TOWN!", width / 2, height / 2);
+  ctx.fillText("'Y' TO PLAY AGAIN!", width / 2, height / 1.75);
 }
 
 const randColor = () => {
